@@ -1,0 +1,46 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>FF14 コンテンツルーレット：メインクエスト攻略</title><style>
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:#0f141b;color:#e8edf3;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans JP",sans-serif;line-height:1.7}
+header{padding:24px 14px;background:#18212c;border-bottom:1px solid #354252}
+main{max-width:1050px;margin:auto;padding:12px}
+h1{font-size:1.45rem;margin:0 0 6px} h2{font-size:1.2rem} h3{font-size:1rem}
+.note{color:#aeb8c5;font-size:.9rem}
+.toc,.card{background:#151c25;border:1px solid #354252;border-radius:14px;padding:16px;margin:0 0 20px}
+.toc ul{list-style:none;padding:0;margin:8px 0}.toc li{margin:7px 0}
+a{color:#8fc7ff}.toc a{display:block;padding:10px 11px;border:1px solid #3a4655;border-radius:9px;text-decoration:none}
+.card{scroll-margin-top:12px}.card ol{padding-left:1.35em}.card li{margin:3px 0}
+.back{font-size:.85rem}
+@media(max-width:600px){header{padding:20px 12px}main{padding:10px 9px}h1{font-size:1.3rem}.card{padding:14px 11px}}
+
+/* 省スペースの一覧：Lv見出しとリンクは常に表示。 */
+header{padding:12px 14px}
+header h1{font-size:1.25rem;line-height:1.35}
+header .note,header .sub{margin:4px 0;font-size:.8rem}
+.toc{padding:12px 14px;margin-bottom:16px}
+.toc>h2{font-size:1.1rem;margin:0 0 4px}
+.toc>p{margin:4px 0 9px;font-size:.8rem}
+.compact-controls{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:9px 0}
+.compact-controls label{display:block;font-size:.78rem;color:#bfd0e0}
+.compact-controls select,.compact-controls input{display:block;width:100%;box-sizing:border-box;margin-top:3px;padding:8px 9px;border:1px solid #54718b;border-radius:8px;background:#1e3144;color:#fff;font:inherit;font-size:.9rem;min-height:42px}
+.compact-count{font-size:.78rem;color:#b6c9d8;margin:4px 0 7px}
+.compact-list{max-height:52vh;max-height:52dvh;overflow:auto;overscroll-behavior:contain;border:1px solid #344d62;border-radius:9px;background:#111c29}
+.compact-group{border-bottom:1px solid #31465a}
+.compact-group:last-child{border:0}
+.compact-group>h3{margin:0;padding:8px 10px;font-size:.9rem;line-height:1.45;background:#253b50;color:#e9f4ff;border-left:3px solid #77dccb}
+.compact-group>ul{list-style:none;padding:7px 8px 9px;margin:0}
+.compact-group li{margin:3px 0}
+.compact-group a{display:block;text-decoration:none;padding:7px 10px;border:1px solid #3c546b;border-radius:7px;background:#1b2e40;color:#bddfff;line-height:1.45;overflow-wrap:anywhere}
+.compact-group a:focus-visible{outline:2px solid #77dccb;outline-offset:1px}
+@media(max-width:600px){.compact-controls{grid-template-columns:1fr}.toc{padding:10px 11px}.compact-list{max-height:48dvh}}
+</style></head>
+<body id="top"><header><h1>FF14 コンテンツルーレット：メインクエスト攻略</h1><p class="note">メインクエストルーレット用。6.1改修後の4人用ダンジョンと通常討滅戦を基準に確認。</p></header>
+<main><div class="note" style="margin:12px 0;padding:10px 12px;border:1px solid #3a4655;border-radius:10px;background:#111820">7.5時点のルーレット対象を基準に整理。攻略文は「固有ギミック名 → 具体的な対処」を優先。零式・極などルーレット外の内容は混在させない方針。</div><nav class="toc" aria-label="コンテンツ一覧"><h2>コンテンツ一覧</h2><p class="note">タップすると各項目へ移動します。</p><div class="compact-controls"><label>ルーレットを選択<select id="roulette-picker"><option value="FF14_%E3%83%8E%E3%83%BC%E3%83%9E%E3%83%AB%E3%83%AC%E3%82%A4%E3%83%89_%E6%94%BB%E7%95%A5_7.5%E7%B2%BE%E5%BA%A6%E7%9B%A3%E6%9F%BB%E7%89%88.html">ノーマルレイド</option><option value="FF14_%E3%82%A2%E3%83%A9%E3%82%A4%E3%82%A2%E3%83%B3%E3%82%B9%E3%83%AB%E3%83%BC%E3%83%AC%E3%83%83%E3%83%88_iPhone%E5%AF%BE%E5%BF%9C%E7%89%88.html">アライアンス</option><option value="FF14_%E3%83%8F%E3%82%A4%E3%83%AC%E3%83%99%E3%83%AA%E3%83%B3%E3%82%B0_%E6%94%BB%E7%95%A5_7.5%E7%B2%BE%E5%BA%A6%E7%9B%A3%E6%9F%BB%E7%89%88.html">ハイレベリング</option><option value="FF14_%E8%A8%8E%E4%BC%90%E8%A8%8E%E6%BB%85%E6%88%A6_%E6%94%BB%E7%95%A5_7.5%E7%B2%BE%E5%BA%A6%E7%9B%A3%E6%9F%BB%E7%89%88.html">討伐・討滅戦</option><option value="FF14_%E3%83%AC%E3%83%99%E3%83%AA%E3%83%B3%E3%82%B0_%E6%94%BB%E7%95%A5_7.5%E7%B2%BE%E5%BA%A6%E7%9B%A3%E6%9F%BB%E7%89%88.html">レベリング</option><option value="FF14_%E3%83%AC%E3%83%99%E3%83%AB%E3%82%AD%E3%83%A3%E3%83%83%E3%83%97_%E6%94%BB%E7%95%A5_7.5%E7%B2%BE%E5%BA%A6%E7%9B%A3%E6%9F%BB%E7%89%88.html">レベルキャップ</option><option value="FF14_%E3%83%A1%E3%82%A4%E3%83%B3%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88_%E6%94%BB%E7%95%A5_7.5%E7%B2%BE%E5%BA%A6%E7%9B%A3%E6%9F%BB%E7%89%88.html" selected>メインクエスト</option><option value="FF14_%E3%82%A8%E3%82%AD%E3%82%B9%E3%83%91%E3%83%BC%E3%83%88_%E6%94%BB%E7%95%A5_7.5%E7%B2%BE%E5%BA%A6%E7%9B%A3%E6%9F%BB%E7%89%88.html">エキスパート</option></select></label><label>名前から探す<input type="search" id="name-search" placeholder="コンテンツ名を入力" autocomplete="off"></label></div><p class="compact-count" id="search-count" aria-live="polite">Lv見出しからコンテンツを選べます。</p><div class="compact-list"><div class="compact-group"><h3>Lv50 新生エオルゼア</h3><ul><li><a href="#item-1">外郭攻略 カストルム・メリディアヌム</a></li><li><a href="#item-2">最終決戦 魔導城プラエトリウム</a></li><li><a href="#item-3">アルテマウェポン破壊作戦</a></li></ul></div></div></nav><section id="item-1" class="card"><h2>外郭攻略 カストルム・メリディアヌム</h2><h3>道中・進行</h3><ol><li>第1区画はタンクが先導し、出現する帝国兵を処理して魔導リーパー改へ進む。</li><li>リーパー改の後は「ダストシュート」で移動。道中の円形予兆を避けながら雑魚を倒す。</li><li>ヴァンガード戦後、シドが魔導アーマーで道を開く。通路を進みリウィア戦へ。</li></ol><h3>ボス1：魔導リーパー改</h3><ol><li>【高出力魔導レーザー】光った正面へ直線攻撃。ボスの向きを見て側面に外れる。</li><li>【増援要請】帝国兵が複数出現。タンクが敵視を取り、範囲攻撃で処理する。</li><li>【爆撃要請】全体攻撃が3回続く。軽減と回復を準備する。</li><li>【魔導カノン】対象の足元に円範囲。予兆を見て離れる。</li><li>開幕にも雑魚がいる。ボスの直線レーザーに注意しながら雑魚を優先して処理する。</li></ol><h3>ボス2：魔導ヴァンガード強襲型</h3><ol><li>【サーメットドリル】タンク強攻撃。防御バフを合わせる。</li><li>【気化爆弾投下要請】着弾地点からの距離減衰。マーカーから離れる。</li><li>【ハイパーチャージ】ボス中心の円とドーナツ範囲。両方の予兆の隙間へ入る。</li><li>【オーバーチャージ】前方扇に麻痺効果。距離減衰の後も正面を避ける。</li><li>【射撃要請】全員の足元に円範囲。予兆を避けた後のハイパーチャージにも備える。</li></ol><h3>ボス3：リウィア・サス・ユニウス</h3><ol><li>【魔導プラズマ】全体攻撃。軽減と回復を合わせる。</li><li>【無尽旋風斬】ボス中心の円の後、外周にも円範囲。最初の着弾後に安全地帯へ移る。</li><li>【アグライアクライム】タンク強攻撃。防御バフを合わせる。</li><li>【無限刃】連続する円・直線範囲。予兆の消えた場所へ順に移動する。</li><li>【炎獣心火撃→気化爆弾投下要請】8方向の直線を外したら中央へ寄り、外周4か所からの距離減衰を受ける。</li></ol><p class="source">確認資料：<a href="https://game8.jp/ff14/326712" target="_blank" rel="noopener">ゲームエイト</a>／<a href="https://nowff14.blogspot.com/2022/04/Castrum-Meridianum.html" target="_blank" rel="noopener">いまさら攻略FF14（6.1改修版）</a></p><p class="back"><a href="#top">▲ 一覧へ戻る</a></p></section><section id="item-2" class="card"><h2>最終決戦 魔導城プラエトリウム</h2><h3>道中・進行</h3><ol><li>第1区画は雑魚を処理し、魔導ターミナル・魔導トランスポーターを調べて移動。円形範囲予兆も避ける。</li><li>コロッサス戦後は魔導アーマーに搭乗。魔導カノンなどで道中の敵を倒し、ネロ戦の前に降りる。</li><li>ネロ戦後は隣の部屋の魔導ターミナルを調べてガイウス戦へ進む。</li></ol><h3>ボス1：魔導コロッサスII</h3><ol><li>【セルレアムベント】全体攻撃。軽減と回復を合わせる。</li><li>【試作魔導レーザーα】ボス周囲4方向の円から外側へさらに円が続く。最初の円同士の間を選ぶ。</li><li>【試作魔導レーザーβ】全員を対象に円範囲。重ならないよう散開する。</li><li>【グランドソード】ボス前方の扇範囲。正面から外れる。</li><li>レーザーα・βの後にもグランドソードが来る。円を避けたらボスの向きも確認する。</li></ol><h3>ボス2：ネロ・トル・スカエウァ</h3><ol><li>【ミョルニルストライク】タンク強攻撃。防御バフを合わせる。</li><li>【ファイナルストライク】頭割り。対象の近くに集まって受ける。</li><li>【起動】線でつながる魔導デスクローが出現。線の対象は離れ、ほかの人が優先して倒す。</li><li>【ブーストアッパー】外周へ移動したネロが内側へ大きな扇範囲。ネロの近くへ寄って外す。</li><li>【オーバードライブ】中心から吹き飛ばし。外周のダメージ床に入らないようボス寄りで受ける。</li></ol><h3>ボス3：ガイウス・ヴァン・バエサル</h3><ol><li>【ターミナス・エスト／ファンタズマータ】青い剣撃と外周の幻影から直線範囲。剣の正面を避ける。</li><li>【イノセンス／フェスティナ・レンテ】前者はタンク強攻撃、後者は頭割り。対象に応じて防御か集合。</li><li>【ディーリゴー】円範囲が続けて出現。攻撃済みの位置を見て移動する。</li><li>【ハンド・オブ・ザ・エンパイア】全員に円範囲。ディーリゴーを避けた後に重ならず散開する。</li><li>【ウェニ・ウィディ・ウィキ】剣気100で即死。4体の幻影を優先して倒し、同時の範囲も避ける。</li></ol><p class="source">確認資料：<a href="https://game8.jp/ff14/326861" target="_blank" rel="noopener">ゲームエイト</a>／<a href="https://nowff14.blogspot.com/2022/04/The-Praetorium.html" target="_blank" rel="noopener">いまさら攻略FF14（6.1改修版）</a></p><p class="back"><a href="#top">▲ 一覧へ戻る</a></p></section><section id="item-3" class="card"><h2>アルテマウェポン破壊作戦</h2><h3>進行</h3><p>独立した道中のない討滅戦。前半の蛮神の力を使う戦闘から、後半のアルテマウェポン本体との戦闘へ移る。</p><h3>前半：蛮神フェーズ</h3><ol><li>【蛮神固有の全体範囲攻撃】タイタンなどの力が解放される際に大きなダメージ。軽減と回復を合わせる。</li><li>【タイタン：距離減衰→ランドスライド】マーカーから離れ、続く2回の直線予兆を避ける。</li><li>【大地の重み】円範囲が2回続く。1回目の着弾跡へ移って次を避ける。</li><li>【ガルーダ：アイオブストーム】外周が使えない間は中央で円範囲を避け、出現したガルーダの位置を見る。</li><li>【イフリート：光輝の炎柱／ノックバック】2連続の円は着弾跡へ。吹き飛ばし後も外周の円範囲を避ける。</li></ol><h3>後半：アルテマウェポン</h3><ol><li>【誘導レーザー】タンク強攻撃。防御バフを合わせる。</li><li>【ホーミングレーザー】全員に円範囲。味方と重ならないよう散開する。</li><li>【エーテル波動】線で結ばれた玉が衝突する前に、片方の玉へ誰かが触れて処理する。</li><li>【収束レーザー／魔導フレア】前者は頭割りで集合、後者は全体攻撃なので軽減と回復を準備。</li><li>【アルテマ】詠唱完了までに倒す。たまるLB3をDPSが使い、詠唱中に削り切る。</li></ol><p class="source">確認資料：<a href="https://game8.jp/ff14/690320" target="_blank" rel="noopener">ゲームエイト（ノーマル）</a></p><p class="back"><a href="#top">▲ 一覧へ戻る</a></p></section></main>
+<script>
+(()=>{const nav=document.querySelector('nav.toc');const picker=nav.querySelector('#roulette-picker');const search=nav.querySelector('#name-search');const count=nav.querySelector('#search-count');const groups=[...nav.querySelectorAll('.compact-group')];
+picker.addEventListener('change',()=>{if(picker.value)location.href=picker.value});
+function filter(){const value=search.value.trim().normalize('NFKC').toLocaleLowerCase();let visible=0;for(const group of groups){let within=0;for(const item of group.querySelectorAll('li')){const match=!value||item.textContent.normalize('NFKC').toLocaleLowerCase().includes(value);item.hidden=!match;if(match)within++}group.hidden=!!value&&!within;visible+=within}count.textContent=value?visible+'件が見つかりました。':'Lv見出しからコンテンツを選べます。'}
+search.addEventListener('input',filter);
+})();
+</script></body></html>

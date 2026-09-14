@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
+<title>FF14 コンテンツルーレット：エキスパート攻略</title><style>
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:#0f141b;color:#e8edf3;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans JP",sans-serif;line-height:1.7}
+header{padding:24px 14px;background:#18212c;border-bottom:1px solid #354252}
+main{max-width:1050px;margin:auto;padding:12px}
+h1{font-size:1.45rem;margin:0 0 6px} h2{font-size:1.2rem} h3{font-size:1rem}
+.note{color:#aeb8c5;font-size:.9rem}
+.toc,.card{background:#151c25;border:1px solid #354252;border-radius:14px;padding:16px;margin:0 0 20px}
+.toc ul{list-style:none;padding:0;margin:8px 0}.toc li{margin:7px 0}
+a{color:#8fc7ff}.toc a{display:block;padding:10px 11px;border:1px solid #3a4655;border-radius:9px;text-decoration:none}
+.card{scroll-margin-top:12px}.card ol{padding-left:1.35em}.card li{margin:3px 0}
+.back{font-size:.85rem}
+@media(max-width:600px){header{padding:20px 12px}main{padding:10px 9px}h1{font-size:1.3rem}.card{padding:14px 11px}}
+
+/* 省スペースの一覧：Lv見出しとリンクは常に表示。 */
+header{padding:12px 14px}
+header h1{font-size:1.25rem;line-height:1.35}
+header .note,header .sub{margin:4px 0;font-size:.8rem}
+.toc{padding:12px 14px;margin-bottom:16px}
+.toc>h2{font-size:1.1rem;margin:0 0 4px}
+.toc>p{margin:4px 0 9px;font-size:.8rem}
+.compact-controls{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:9px 0}
+.compact-controls label{display:block;font-size:.78rem;color:#bfd0e0}
+.compact-controls select,.compact-controls input{display:block;width:100%;box-sizing:border-box;margin-top:3px;padding:8px 9px;border:1px solid #54718b;border-radius:8px;background:#1e3144;color:#fff;font:inherit;font-size:.9rem;min-height:42px}
+.compact-count{font-size:.78rem;color:#b6c9d8;margin:4px 0 7px}
+.compact-list{max-height:52vh;max-height:52dvh;overflow:auto;overscroll-behavior:contain;border:1px solid #344d62;border-radius:9px;background:#111c29}
+.compact-group{border-bottom:1px solid #31465a}
+.compact-group:last-child{border:0}
+.compact-group>h3{margin:0;padding:8px 10px;font-size:.9rem;line-height:1.45;background:#253b50;color:#e9f4ff;border-left:3px solid #77dccb}
+.compact-group>ul{list-style:none;padding:7px 8px 9px;margin:0}
+.compact-group li{margin:3px 0}
+.compact-group a{display:block;text-decoration:none;padding:7px 10px;border:1px solid #3c546b;border-radius:7px;background:#1b2e40;color:#bddfff;line-height:1.45;overflow-wrap:anywhere}
+.compact-group a:focus-visible{outline:2px solid #77dccb;outline-offset:1px}
+@media(max-width:600px){.compact-controls{grid-template-columns:1fr}.toc{padding:10px 11px}.compact-list{max-height:48dvh}}
+</style></head>
+<body id="top"><header><h1>FF14 コンテンツルーレット：エキスパート攻略</h1><p class="note">パッチ7.5/7.56時点。公式パッチノートで対象変更を確認。</p></header>
+<main>
+<div class="note" style="margin:12px 0;padding:10px 12px;border:1px solid #3a4655;border-radius:10px;background:#111820">パッチ7.5時点。各ボスは出典を確認して「技名 → 対処」を5項目ずつ記載。道中は確認できた進行上の注意を掲載。</div>
+<nav class="toc" aria-label="コンテンツ一覧"><h2>コンテンツ一覧</h2><p class="note">タップすると各項目へ移動します。</p><div class="compact-controls"><label>ルーレットを選択<select id="roulette-picker"><option value="FF14_%E3%83%8E%E3%83%BC%E3%83%9E%E3%83%AB%E3%83%AC%E3%82%A4%E3%83%89_%E6%94%BB%E7%95%A5_7.5%E7%B2%BE%E5%BA%A6%E7%9B%A3%E6%9F%BB%E7%89%88.html">ノーマルレイド</option><option value="FF14_%E3%82%A2%E3%83%A9%E3%82%A4%E3%82%A2%E3%83%B3%E3%82%B9%E3%83%AB%E3%83%BC%E3%83%AC%E3%83%83%E3%83%88_iPhone%E5%AF%BE%E5%BF%9C%E7%89%88.html">アライアンス</option><option value="FF14_%E3%83%8F%E3%82%A4%E3%83%AC%E3%83%99%E3%83%AA%E3%83%B3%E3%82%B0_%E6%94%BB%E7%95%A5_7.5%E7%B2%BE%E5%BA%A6%E7%9B%A3%E6%9F%BB%E7%89%88.html">ハイレベリング</option><option value="FF14_%E8%A8%8E%E4%BC%90%E8%A8%8E%E6%BB%85%E6%88%A6_%E6%94%BB%E7%95%A5_7.5%E7%B2%BE%E5%BA%A6%E7%9B%A3%E6%9F%BB%E7%89%88.html">討伐・討滅戦</option><option value="FF14_%E3%83%AC%E3%83%99%E3%83%AA%E3%83%B3%E3%82%B0_%E6%94%BB%E7%95%A5_7.5%E7%B2%BE%E5%BA%A6%E7%9B%A3%E6%9F%BB%E7%89%88.html">レベリング</option><option value="FF14_%E3%83%AC%E3%83%99%E3%83%AB%E3%82%AD%E3%83%A3%E3%83%83%E3%83%97_%E6%94%BB%E7%95%A5_7.5%E7%B2%BE%E5%BA%A6%E7%9B%A3%E6%9F%BB%E7%89%88.html">レベルキャップ</option><option value="FF14_%E3%83%A1%E3%82%A4%E3%83%B3%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88_%E6%94%BB%E7%95%A5_7.5%E7%B2%BE%E5%BA%A6%E7%9B%A3%E6%9F%BB%E7%89%88.html">メインクエスト</option><option value="FF14_%E3%82%A8%E3%82%AD%E3%82%B9%E3%83%91%E3%83%BC%E3%83%88_%E6%94%BB%E7%95%A5_7.5%E7%B2%BE%E5%BA%A6%E7%9B%A3%E6%9F%BB%E7%89%88.html" selected>エキスパート</option></select></label><label>名前から探す<input type="search" id="name-search" placeholder="コンテンツ名を入力" autocomplete="off"></label></div><p class="compact-count" id="search-count" aria-live="polite">Lv見出しからコンテンツを選べます。</p><div class="compact-list"><div class="compact-group"><h3>Lv100</h3><ul><li><a href="#item-1">遺忘行路 ミストウェイク</a></li><li><a href="#item-2">妖異侵攻 クルティウス魔導工廠</a></li></ul></div></div></nav>
+<section class="card" id="item-1"><h2>遺忘行路 ミストウェイク</h2><h3>道中・進行</h3><ol><li>クワン洞の採掘区画を北へ進み、雑魚を倒してトレノ・カトブレパスの部屋へ。</li><li>トレノ平野には落雷の円形範囲がある。予兆を踏まずにアムドゥシアスへ進む。</li><li>トレノ市街地の雑魚を処理した先でサンダーグリフォンと戦う。</li></ol><h3>ボス1：トレノ・カトブレパス</h3><ol><li>【地震】全体攻撃。軽減・回復を合わせる。</li><li>【サンダラ】全員の円範囲を岩塊から離して捨てる。壊すと悪魔の光の遮蔽物が減る。</li><li>【悪魔の光】残った岩塊の陰へ入り、石化を防ぐ。</li><li>【サンダガ】タンク対象の円形強攻撃。タンクは味方と岩塊を巻き込まない。</li><li>【ライトニングレイ／ペトロブレス】前者は直線頭割りで集合、後者は石化する前方扇なので背面へ。</li></ol><h3>ボス2：アムドゥシアス</h3><ol><li>【サンダークラップコンチェルト】ボス前方か後方の広い扇。周囲の雷エフェクトが欠けた一角へ移る。</li><li>【バイオラ→サンダーギャロップ】緑の玉を出した後、5回突進。突進に触れた玉から円範囲が出る。</li><li>【サンダーギャロップ】最初の突進を外し、緑玉の1回目の爆発跡へ移って続く爆発を避ける。</li><li>【サンダジャ／ショックボルト】前者は全体攻撃と残った緑玉の爆発、後者はタンク強攻撃。</li><li>【サンダガ】3連続頭割り。途中で抜けずに集合し、回復を受ける。</li></ol><h3>ボス3：サンダーグリフォン</h3><ol><li>【サンダースパーク】全体攻撃のあと外周がダメージ床になる。中央寄りで戦う。</li><li>【ハイボルト→サンダリングロア】全員の円範囲を散開し、出た紫玉とボスの直線攻撃の交点を避ける。</li><li>【ゴールデンタロン】タンク強攻撃。防御バフを使う。</li><li>【ライトニングフォール】中央の突進直線を外して吹き飛ばしを受け、続く直線を避ける。</li><li>【ボルトストーム】外周を移動する竜巻が増える。次のサンダリングロアでは竜巻と紫玉の射線も確認。</li></ol><p class="source">確認資料：<a href="https://nowff14.blogspot.com/2025/12/FF14-Mistwake.html" target="_blank" rel="noopener">いまさら攻略FF14</a>／<a href="https://sunny-stronger0505.com/ffxiv-dungeon-mistwake/" target="_blank" rel="noopener">さにすとのインベントリ</a></p><p class="back"><a href="#top">▲ 一覧へ戻る</a></p></section>
+<section class="card" id="item-2"><h2>妖異侵攻 クルティウス魔導工廠</h2><h3>道中・進行</h3><ol><li>バブイルの塔北側のコンメルキウム区を進み、雑魚を倒してアーマードアイ戦へ。</li><li>北エブラーナ林野の雑魚を処理した先でチョルトと戦う。</li><li>工廠内に入ったら緑色のパイプで先へ進み、マルファス戦へ向かう。</li></ol><h3>ボス1：アーマードアイ</h3><ol><li>【アイズオンミー】全体魔法攻撃。初回に外周がダメージ床となる。</li><li>【ペトリビーム】左右に揺れる照準が固定されたら、ボスの近くから逆側へ移動する。</li><li>【スキャナー発射】赤い動体感知エリア内は停止。移動・攻撃・回復・オートアタックも控える。</li><li>【質量弾ミサイル】対象者の頭割りへ集合する。</li><li>【ミサイル発射→ペトリビーム】床の円を2回避けてからボスへ近づき、最後の扇範囲を避ける。</li></ol><h3>ボス2：チョルト</h3><ol><li>【闇の衝撃】全体攻撃。初回は外周がダメージ床になる。</li><li>【肉弾】正面直線を避け、場外へ移ったボスの位置を追う。後半は追撃の直線が2回。</li><li>【肉圧殺・吹き飛ばし】肉弾の後に中央からノックバック。外周へ落ちない位置に戻る。</li><li>【嘔吐】対象者の方向へ扇範囲。ボスの側面・背面へ回り込む。</li><li>【肉圧殺・塔】頭割りの塔が4回続く。全員で順番に移動し、回復を挟む。</li></ol><h3>ボス3：マルファス</h3><ol><li>【ディスポーザル】全体攻撃。初回は外周にダメージ床が出る。</li><li>【ヴォイド・ダーク】対象者側の前方180度範囲。ボスの背面へ回る。</li><li>【スクラップメドル→パペットストリング】直線攻撃後、大型は扇、小型は自身中心の円範囲。操られた残骸の種類を見る。</li><li>【ストリングアップ】頭上カウント終了時に停止していると操られる。移動を続ける。</li><li>【パペットマスタリー】残骸が移動した後の攻撃範囲を見て避ける。大型の扇は根元側が狭い。</li></ol><p class="source">確認資料：<a href="https://nowff14.blogspot.com/2026/04/FF14-The-Clyteum.html" target="_blank" rel="noopener">いまさら攻略FF14</a>／<a href="https://game8.jp/ff14/782225" target="_blank" rel="noopener">ゲームエイト</a></p><p class="back"><a href="#top">▲ 一覧へ戻る</a></p></section>
+</main>
+<script>
+(()=>{const nav=document.querySelector('nav.toc');const picker=nav.querySelector('#roulette-picker');const search=nav.querySelector('#name-search');const count=nav.querySelector('#search-count');const groups=[...nav.querySelectorAll('.compact-group')];
+picker.addEventListener('change',()=>{if(picker.value)location.href=picker.value});
+function filter(){const value=search.value.trim().normalize('NFKC').toLocaleLowerCase();let visible=0;for(const group of groups){let within=0;for(const item of group.querySelectorAll('li')){const match=!value||item.textContent.normalize('NFKC').toLocaleLowerCase().includes(value);item.hidden=!match;if(match)within++}group.hidden=!!value&&!within;visible+=within}count.textContent=value?visible+'件が見つかりました。':'Lv見出しからコンテンツを選べます。'}
+search.addEventListener('input',filter);
+})();
+</script></body></html>
